@@ -20,6 +20,10 @@ export default async function getPileOfShame(steamApiKey: string, steamId: strin
     probablyCompletedMainPercentage: 0,
     probablyCompletedMainExtraPercentage: 0,
     probablyCompletedCompletionistPercentage: 0,
+    totalPlayedHours: 0,
+    totalNeededHoursMain: 0,
+    totalNeededHoursMainExtra: 0,
+    totalNeededHoursCompletionist: 0,
     accuracy: 0,
   };
   console.log("Collecting Steam Games...");
@@ -83,6 +87,11 @@ export default async function getPileOfShame(steamApiKey: string, steamId: strin
   stats.probablyCompletedMainPercentage = (100 * stats.probablyCompletedMain) / stats.trackedGames;
   stats.probablyCompletedMainExtraPercentage = (100 * stats.probablyCompletedMainExtra) / stats.trackedGames;
   stats.probablyCompletedCompletionistPercentage = (100 * stats.probablyCompletedCompletionist) / stats.trackedGames;
+
+  stats.totalPlayedHours = stats.results.map((item) => item.playtime).reduce((prev, next) => prev + next);
+  stats.totalNeededHoursMain = stats.results.map((item) => item.gameplayMain).reduce((prev, next) => prev + next);
+  stats.totalNeededHoursMainExtra = stats.results.map((item) => item.gameplayMainExtra).reduce((prev, next) => prev + next);
+  stats.totalNeededHoursCompletionist = stats.results.map((item) => item.gameplayCompletionist).reduce((prev, next) => prev + next);
   console.log("Done!");
   return stats;
 }

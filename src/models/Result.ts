@@ -22,6 +22,10 @@ export default interface Stat {
   results: Result[];
   totalGames: number;
   trackedGames: number;
+  totalPlayedHours: number;
+  totalNeededHoursMain: number;
+  totalNeededHoursMainExtra: number;
+  totalNeededHoursCompletionist: number;
   averagePlaythroughPercentageMain: number;
   averagePlaythroughPercentageMainExtra: number;
   averagePlaythroughPercentageCompletionist: number;
