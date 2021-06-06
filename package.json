@@ -1,0 +1,29 @@
+{
+  "name": "pile-of-shame-calculator",
+  "version": "1.0.0",
+  "description": "calculate your pile of shame",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "start": "npm test",
+    "test": "node lib/test.js",
+    "compile": "tsc",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile"
+  },
+  "author": "alfagun74",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "ts-loader": "^9.2.3",
+    "tslint": "^5.20.1",
+    "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "howlongtobeat": "^1.3.1"
+  }
+}
