@@ -15,7 +15,7 @@
     "pretest": "npm run compile"
   },
   "author": "alfagun74",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "private": true,
   "devDependencies": {
     "ts-loader": "^9.2.3",
